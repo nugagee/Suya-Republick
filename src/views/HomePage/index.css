@@ -1,5 +1,5 @@
 .hero-bg {
-  -webkit-background-size: cover;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -10,7 +10,7 @@
       rgba(235, 163, 154, 0) 13.9%,
       rgba(47, 81, 92, 0) 100.87%
     ),
-    url("../../assets/img/herobg.jpg");
+    url("../../assets/img/herobg.jpg"); */
   padding-top: 150px;
   padding-bottom: 80px;
 }
@@ -95,11 +95,21 @@
   font-family: "EuclidCircularB-Regular", "Inter", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 32px;
   color: #333333;
-  max-width: 354px;
+  max-width: 750px;
+  margin: 0 auto;
 }
+
+.card-container-img {
+  overflow: hidden;
+}
+
+.card-container-img img:hover {
+  transform: scale(1.1);
+}
+
 @media only screen and (max-width: 1024px) {
   .hot-trips p {
     margin-bottom: 30px;
@@ -211,35 +221,27 @@
 }
 
 .app-section {
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-image: url("../../assets/img/Group\ 16696.svg"); */
-  /* padding: 150px 0; */
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  min-height: 485px;
-  /* padding: 0 10%; */
-  /* background: #56ccf2; */
+  height: 485px;
+  overflow: hidden;
 }
 
 .app-section-text {
-  width: 50%;
+  width: 100%;
   height: 485px;
   padding-left: 100px;
   display: flex;
   align-items: center;
-  background: #56ccf2;
+  /* background: #56ccf2; */
 }
 .app-section-image {
-  width: 50%;
-  height: 485px;
+  width: 80%;
+  /* height: 485px; */
+  margin: 0 auto;
 }
 
 .appline {
@@ -269,15 +271,17 @@
 
 .hero-flex {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
+  height: 80vh;
 }
 .left-card {
-  width: 60%;
+  width: 50%;
 }
 
 .right-card {
-  width: 40%;
+  width: 50%;
 }
 
 @media screen and (max-width: 800px) {

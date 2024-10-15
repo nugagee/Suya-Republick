@@ -1,25 +1,24 @@
 // import { addDays } from "date-fns";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 // import Slider from "react-slick";
 // import "slick-carousel/slick/slick-theme.css";
 // import "slick-carousel/slick/slick.css";
 import Swal from "sweetalert2";
-import imageTwo from "../../assets/img/abuja.webp";
+import phoneBg from "../../assets/img/phonebg.webp";
 import appline from "../../assets/img/appline.svg";
 import appleBtn from "../../assets/img/appstore.webp";
 import cards from "../../assets/img/card.webp";
-import imageFive from "../../assets/img/edo.webp";
 import googleBtn from "../../assets/img/google.webp";
-import imageOne from "../../assets/img/lagos-ajah.webp";
 import ep from "../../assets/img/man.webp";
-import phoneBg from "../../assets/img/phonebg.webp";
+import spiceText from "../../assets/img/suya/Suya-Spice-Text-1.png";
+import spiceImage from "../../assets/img/suya/Suya-Spice-Banner.jpg";
+import spiceImageGif from "../../assets/img/suya/Suya-Spice-Banner-gif.gif";
+import platterImg from "../../assets/img/suya/Full-Platter-1.jpg";
+import brandLogo from "../../assets/img/suya/Banner-brand.jpg";
+import brandVideo from "../../assets/img/suya/SUYA-REPUBLICK-VIDEO_vid.mp4";
 import newTag from "../../assets/img/new-flight.png";
-import updateImage from "../../assets/img/importantupdate.png";
-import noticeImage from "../../assets/img/notice.jpeg";
-import imageFour from "../../assets/img/portharcout-1.webp";
-import imageThree from "../../assets/img/uselu.webp";
-// import Navbar from "../../components/NavBar";
+import Navbar from "../../components/NavBar";
 // import configs from "../../configs";
 import apiroutes from "../../services/apiroutes";
 import { request, requestSetting } from "../../services/apiservice";
@@ -44,8 +43,6 @@ export const HomeComponent = () => {
   const [modalVisibleNoticePopup, setModalVisibleNoticePopup] = useState(false);
   const [modalVisibleTravelstart, setVisibleTravelstart] = useState(false);
 
-
-
   const toggleTab = (index) => {
     setToggleState(index);
   };
@@ -55,14 +52,11 @@ export const HomeComponent = () => {
     // localStorage.removeItem("walletState");
   }, []);
 
-
   const toggleModalTravelstartClose = () => {
     setVisibleTravelstart(false);
     toggleTab(1);
     // console.log(window.innerWidth, "WINDOW WIDTH");
   };
-
-
 
   const adults = [];
   for (let i = 1; i <= 13; i++) {
@@ -82,7 +76,6 @@ export const HomeComponent = () => {
       return { color };
     },
   };
-
 
   const toggleModalClose = () => {
     setBookRouteNowVisible(false);
@@ -110,7 +103,6 @@ export const HomeComponent = () => {
   )} to ${popularRouteDestination?.replace("=>", "-")}`;
   const modalPar = "Please enter details below to proceed.";
   // const modalPar2 = "Book A Flight.";
-
 
   const settings = {
     dots: false,
@@ -160,151 +152,32 @@ export const HomeComponent = () => {
 
   return (
     <div id="top" style={{ width: "100vw", overflowX: "hidden" }}>
-     
-      {/* <Navbar /> */}
+      <Navbar />
       <section className="hero-bg">
         <div className="container">
           <div className="hero-flex">
             <div className="left-card align-self-center">
-              <h1>The modern way to commute across cities</h1>
-              <br />
-              <p>
-                GIGM is an African technology powered company, providing
-                seamless mobility services to commuters across Africa
-              </p>
+              <div className="app-section-image">
+                <img
+                  src={spiceText}
+                  alt=""
+                  className=""
+                  loading="lazy"
+                  style={{ width: "100%" }}
+                />
+              </div>
             </div>
 
-            <div className="right-card">
-              <section id="open-positions">
-                <div className="positions">
-                  <div className="position-filters">
-                    <label
-                      className={
-                        toggleState === 1
-                          ? "tabb-label active-tabs"
-                          : "tabb-label"
-                      }
-                      onClick={() => toggleTab(1)}
-                    >
-                      Book a seat
-                    </label>
-                    <label
-                      className={
-                        toggleState === 2
-                          ? "tabb-label active-tabs"
-                          : "tabb-label"
-                      }
-                      // onClick={() => {
-                      //   Swal.fire({
-                      //     showConfirmButton: false,
-                      //     timer: 4000,
-                      //     text: `This feature is unavailable at the moment, Please try again later!`,
-                      //     icon: "error",
-                      //   });
-                      //   toggleTab(1);
-                      // }}
-                      onClick={() => toggleTab(2)}
-                    >
-                      Hire a bus
-                    </label>
-                    <label
-                      className={
-                        toggleState === 3
-                          ? "tabb-label active-tabs"
-                          : "tabb-label"
-                      }
-                      onClick={() => toggleTab(3)}
-                    >
-                      Booking status
-                    </label>
-                    <label
-                      className={
-                        toggleState === 4
-                          ? "tabb-label active-tabs blink_me"
-                          : "tabb-label blink_me"
-                      }
-                      onClick={() => {
-                        toggleTab(4);
-                        setVisibleTravelstart(true);
-                        // alert("Flight feature coming soon...");
-                      }}
-                      style={{ position: "relative", color: "white" }}
-                    >
-                      <img
-                        src={newTag}
-                        alt="nw-tag"
-                        width="35"
-                        height="35"
-                        // className="download-btn-btn"
-                        loading="lazy"
-                        style={{
-                          position: "absolute",
-                          top: "-20px",
-                          left: "30%",
-                        }}
-                      />
-                      Book a flight
-                    </label>
-                  </div>
-
-                  <div
-                    className={
-                      toggleState === 1
-                        ? "position-group  active-content"
-                        : "position-group"
-                    }
-                  >
-                    <div className="position-post">
-                    {/* <BookSeat  departureTerminal={departureTerminal}/> */}
-                    </div>
-                  </div>
-                  <div
-                    className={
-                      toggleState === 2
-                        ? "position-group  active-content"
-                        : "position-group"
-                    }
-                  >
-                    <div className="position-post">
-                      {/* <HireBus /> */}
-                    </div>
-                  </div>
-
-                  <div
-                    className={
-                      toggleState === 3
-                        ? "position-group  active-content"
-                        : "position-group"
-                    }
-                  >
-                    <div className="position-post">
-                      {/* <BookStatus /> */}
-                    </div>
-                    <div
-                      className={
-                        toggleState === 4
-                          ? "position-group  active-content"
-                          : "position-group"
-                      }
-                    >
-                      <div className="position-post">
-                        {/* <iframe                         title="A custom made iframe"
- src="https://www.youtube.com/embed/uXWycyeTeCs" width={1000} height={500} sandbox='allow-scripts allow-modal' loading='eager'></iframe> */}
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className={
-                      toggleState === 4
-                        ? "position-group  active-content"
-                        : "position-group"
-                    }
-                  >
-                    <div className="position-post"></div>
-                  </div>
-                  {/* </div> */}
-                </div>
-              </section>
+            <div className="right-card align-self-center">
+              <div className="app-section-image">
+                <img
+                  src={spiceImage}
+                  alt=""
+                  className=""
+                  loading="lazy"
+                  style={{ width: "100%" }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -313,75 +186,92 @@ export const HomeComponent = () => {
       <section className="hot-trips pt-5 pb-5">
         <div className="container">
           <div className="row row-grid">
-            <div className="col-md-5 align-self-center">
-              <div className="prices-container">
-                <h1>Best Trip Prices</h1>
-                <p>Bringing you more routes at the best fares.</p>
+            <div className="col-md-12 align-self-center">
+              <div className="prices-container text-center">
+                <h3 style={{ color: "red" }}>S U Y A R E P U B L I C K</h3>
+                <h1>
+                  <b>We are bringing the taste of Africa to Manchester.</b>
+                </h1>
+                <p>
+                  Our meals are made with natural, fresh and organic spices and
+                  recipes from Africa.
+                </p>
               </div>
             </div>
-          
+          </div>
+        </div>
+      </section>
+      <section className="hot-cards pt-5 pb-5">
+        <div className="container">
+          <div className="row row-grid">
+            <div className="col-md-4">
+              <div className="card-container text-left">
+                <div className="card-container-img">
+                  <img
+                    src={spiceImageGif}
+                    alt=""
+                    className=""
+                    loading="lazy"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <h3>
+                  <b>SUYA SPICE</b>
+                </h3>
+                <p>Get your Suya spice anywhere anyime within UK</p>
+                <h6 style={{ color: "#b7903c" }}>ORDER NOW</h6>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card-container text-left">
+                <div className="card-container-img">
+                  <img
+                    src={platterImg}
+                    alt=""
+                    className=""
+                    loading="lazy"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <h3>
+                  <b>OUR MENU</b>
+                </h3>
+                <p>
+                  Our meals are made with natural, fresh and organic spices and
+                  recipes from Africa.
+                </p>
+                <h6 style={{ color: "#b7903c" }}>OUR MENU</h6>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card-container text-left">
+                <div className="card-container-img">
+                  <img
+                    src={brandLogo}
+                    alt=""
+                    className=""
+                    loading="lazy"
+                    style={{ width: "100%" }}
+                  />
+                </div>
+                <h3>
+                  <b>OUR BRAND</b>
+                </h3>
+                <p>
+                  The first Suya Republick started out in the streets of Lagos,
+                  Nigeria in 2018.
+                </p>
+                <h6 style={{ color: "#b7903c" }}>LEARN MORE</h6>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="app-section">
-        <div className="app-section-text">
-          {/* <span>Introducing</span> */}
-          <div className="">
-            <h1>
-              Enjoy the{" "}
-              <span style={{ color: "red", background: "none" }}>
-                GIGM Appvantage
-              </span>
-            </h1>
-            <h1>Move Freely, Do Easily</h1>
-            <p>
-              It is all you need in one travel app. Book bus tickets, hire a
-              vehicle and pay bills.
-            </p>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://onelink.to/j7k4zu"
-            >
-              {/* <Link to="https://play.google.com/store/apps/details?id=com.gigm"> */}{" "}
-              <img
-                src={googleBtn}
-                alt=""
-                className="download-btn-btn"
-                loading="lazy"
-              />
-            </a>
-            &nbsp;
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://onelink.to/j7k4zu"
-            >
-              {/* <Link to="https://apps.apple.com/ng/app/gig-mobility/id1154045195"> */}
-              <img
-                src={appleBtn}
-                alt=""
-                className="download-btn-btn"
-                loading="lazy"
-              />
-            </a>
-          </div>
-        </div>
-        <div className="app-section-image">
-          <img
-            src={phoneBg}
-            alt=""
-            className=""
-            loading="lazy"
-            style={{ width: "100%" }}
-          />
-        </div>
-        <div className="col-md-7">
-          <img src={appline} alt="" className="appline" loading="lazy" />
-        </div>
-        {/* </div> */}
-        {/* </div> */}
+        <video className="videoTag" autoPlay loop muted style={{width:"100%", height: "100%"}}>
+          <source src={brandVideo} type="video/mp4" />
+        </video>
       </section>
 
       <section className="wallet-section">
@@ -412,8 +302,6 @@ export const HomeComponent = () => {
                 <p>Earn easy with GIGM</p>
 
                 <p>Become an enterprise partner today!</p>
-
-              
               </div>
             </div>
             <div className="col-md-6 align-self-center">
@@ -426,5 +314,3 @@ export const HomeComponent = () => {
   );
 };
 export default HomeComponent;
-
-
