@@ -7,24 +7,33 @@
 .footer-text li {
   font-size: 14px;
   line-height: 17px;
-  color: red;
+  color: #ff0000;
 }
 .socialfootericon img {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+    filter: invert(1)
 }
 /* .socialfootericon img:hover{
    transform: translateY(20px);
 } */
 
 .footer-cards {
+  background-image: url("../../assets/img/suya/footer-bg.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
   justify-content:space-between;
   flex-wrap: wrap;
+  padding: 100px 50px;
 }
 
 .footer-card {
-  flex-basis: 20%;
+  flex-basis: 30%;
 }
 
 .footer-logo {

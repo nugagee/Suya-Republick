@@ -93,7 +93,7 @@ p {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #b2b2b2 !important;
   /* color: #56ccf2; */
 }
 
@@ -110,7 +110,7 @@ a {
 
 .socialfootericon .footer-img {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 a:hover img {
@@ -628,35 +628,42 @@ a:hover i {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0px -25px;
-  background-image: url("../../assets/img/bg vector.png");
+  background-image: url("../../assets/img/suya/footer-bg.jpg");
   background-color: #f5f5f5;
   position: relative;
 }
 
 .last-section img {
-  width: 50px;
+  width: 70px;
 }
 
-.last-section h1 {
+.last-section h1, .last-section h3 {
   font-family: "EuclidCircularB-Bold";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 23px;
-  color: #000000;
+  color: #b7903c;
   margin-bottom: 20px;
-  text-align: center;
+  /* text-align: center; */
 }
 
-.last-section p {
+.last-section h3 {
+  font-size: 14px;
+}
+.last-section h2 {
+  font-size: 24px;
+  color: #ffffff;
+}
+.last-section p, .last-section span {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #000000;
+  color: #b2b2b2;
   margin-bottom: 15px;
   transition: 0.3s ease;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .last-section p:hover {

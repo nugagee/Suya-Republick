@@ -5,11 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import "slick-carousel/slick/slick-theme.css";
 // import "slick-carousel/slick/slick.css";
 import Swal from "sweetalert2";
-import phoneBg from "../../assets/img/phonebg.webp";
-import appline from "../../assets/img/appline.svg";
-import appleBtn from "../../assets/img/appstore.webp";
 import cards from "../../assets/img/card.webp";
-import googleBtn from "../../assets/img/google.webp";
 import ep from "../../assets/img/man.webp";
 import spiceText from "../../assets/img/suya/Suya-Spice-Text-1.png";
 import spiceImage from "../../assets/img/suya/Suya-Spice-Banner.jpg";
@@ -24,10 +20,12 @@ import apiroutes from "../../services/apiroutes";
 import { request, requestSetting } from "../../services/apiservice";
 import { getAuth, getUser, setAuth, setAuthWallet } from "../../services/auth";
 import "./index.css";
+import Button from "../../components/Button";
+import Footer from "../../components/Footer";
 
 export const HomeComponent = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []);
   const [popularData, setPopularData] = useState([]);
   const [routeLoading, setRouteLoading] = useState(true);
@@ -154,6 +152,19 @@ export const HomeComponent = () => {
     <div id="top" style={{ width: "100vw", overflowX: "hidden" }}>
       <Navbar />
       <section className="hero-bg">
+        <div className="chatwithus">
+          {" "}
+          <p>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="http://wa.me/+447378837837"
+            >
+              <i class="fa fa-whatsapp" aria-hidden="true"></i>{" "}
+            </a>{" "}
+            Chat with us!
+          </p>
+        </div>
         <div className="container">
           <div className="hero-flex">
             <div className="left-card align-self-center">
@@ -269,47 +280,38 @@ export const HomeComponent = () => {
       </section>
 
       <section className="app-section">
-        <video className="videoTag" autoPlay loop muted style={{width:"100%", height: "100%"}}>
+        <video
+          className="videoTag"
+          autoPlay
+          loop
+          muted
+          style={{
+            width: "100%",
+            // height: "100%"
+          }}
+        >
           <source src={brandVideo} type="video/mp4" />
         </video>
       </section>
 
-      <section className="wallet-section">
-        <div className="container">
-          <div className="row row-grid">
-            <div className="col-md-6 align-self-center">
-              <h1>The lightest digital wallet you will ever own</h1>
-              <br />
-              <p>
-                The GIGM digital wallet is a seamless way to pay for
-                transactions within our ecosystem. Purchase bus tickets,
-                airtime, data and pay for utility bills using the digital wallet
-                available only on the mobile app.
-              </p>
-            </div>
-            <div className="col-md-6">
-              <img src={cards} alt="" className="img-fluid" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="ep-section">
-        <div className="container">
-          <div className="row row-grid">
-            <div className="col-md-6">
-              <div className="ep-apply">
-                <h1>We do the heavy lifting </h1>
-                <p>Earn easy with GIGM</p>
+      <div className="col-md-2" style={{ margin: "0 auto" }}>
+        <Button
+          text="MAKE YOUR ORDER"
+          // handleButtonClick={handleRoundWay}
+          type="button"
+          btnstyle={{
+            background: "#D2401E",
+            color: "white",
+            margin: "20px 0",
+            // fontFamily: "Euclid Circular B",
+            fontWeight: "600",
+            fontSize: "16px",
+            lineHeight: "24px",
+          }}
+        />
+      </div>
 
-                <p>Become an enterprise partner today!</p>
-              </div>
-            </div>
-            <div className="col-md-6 align-self-center">
-              <img src={ep} alt="" className="ep-apply-image" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 };

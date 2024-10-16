@@ -124,12 +124,12 @@
 } */
 
 .blue-btn-nav {
-  /* background: red; */
-  background: #56ccf2;
+  background: #D2401E;
+  /* background: #56ccf2; */
   border-radius: 8px;
   opacity: 1;
   padding: 10px 20px;
-  color: white;
+  color: white !important;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;

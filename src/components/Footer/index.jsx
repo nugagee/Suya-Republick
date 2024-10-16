@@ -1,128 +1,59 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import logo from "../../assets/img/Layer x0020 1.png";
+import { useNavigate } from "react-router-dom";
+import logo from "../../assets/img/suya/Mobile-Logo.png";
 import arrowup from "../../assets/img/arrow-up-small-footer.svg";
 import facebook from "../../assets/img/facebook.svg";
 import instagram from "../../assets/img/instagram.svg";
-import isoLogo from "../../assets/img/iso-logo.png";
+import footerImg from "../../assets/img/suya/Footer-Banner.jpg";
 import twitter from "../../assets/img/twitter.svg";
 import "./index.css";
+import { COLOR_FOOTER_WHITE, COLOR_GOLD, COLOR_WHITE } from "../constant";
 
 export const Footer = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <div>
-      {/* <section className="subscribe-section">
-        <div className="container">
-          <div className="bg-sub">
-            <div className="row row-grid">
-              <div className="col-md-7">
-                <h1>
-                  New routes, latest travel news and product update? Be the first to hear about it.
-                </h1>
-              </div>
-              <div className="bg-sub-button col-md-5">
-                <InputField
-                  type="text"
-                  placeholder="Enter email"
-                  onChangeMethod={() => {}}
-                />
-                <br />
-                <br />
-                <Button
-                className="home-button"
-                  text="Subscribe"
-                  handleButtonClick={() => {}}
-                  type="button"
-                  btnstyle={{
-                    background: "#E21D00",
-                    color: "white",
-                    width: "30%",
-                    height: "40px",
-                    borderRadius:"10px",
-                    border:"none",
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      <footer className="last-section pt-5 pb-5">
-        <div className="container">
-          <div className="footer-logo pb-5">
-            <Link to="/">
-              <img src={logo} alt="gigm logo" />
-            </Link>
-          </div>
-          <div className="footer-cards">
-            <div className="footer-card footer-logo-mobile">
-              <Link to="/">
-                <img src={logo} alt="gigm logo" />
-              </Link>
-            </div>
+      <footer className="last-section pb-5">
+        <div className="row row-grid">
+          <div className="footer-cards col-md-6">
             <div className="footer-card mb-5">
-              <h1>Company</h1>
-              <Link to="/About-Us">
-                <p>About Us</p>
-              </Link>
+              {/* <div className="footer-logo-mobile">
+                <Link to="/">
+                  <img src={logo} alt="gigm logo" />
+                </Link>
+              </div> */}
+              <h1 style={{ color: COLOR_GOLD }}>HOTLINES</h1>
+              <span>
+                <a href="tel:07378837837">07378 837837</a>,{" "}
+                <a href="tel:01616980898">01616980898</a>
+              </span>
+              <br />
+              <br />
+              <h1 style={{ color: COLOR_GOLD }}>QUICK LINKS</h1>
               <Link to="/About-Us/#our-team">
-                <p>Team</p>
+                <p>Home</p>
               </Link>
 
-              {/* <Link to="/luggage">
-                <p>Luggage Allowance</p>
-              </Link> */}
-              {/* <Link to="/"><p>Become an Ambassador</p></Link>
-              <Link to="/"><p>Become a captain</p></Link> */}
+              <Link to="/luggage">
+                <p>Our Menu</p>
+              </Link>
+              <Link to="/">
+                <p>Our Brand</p>
+              </Link>
+              <Link to="/">
+                <p>Talk to us</p>
+              </Link>
             </div>
             <div className="footer-card mb-5">
-              <h1>Experience</h1>
-              <Link to="/Contact-Us">
-                <p>Contact Us</p>
-              </Link>
-              <Link to="/Faq">
-                <p>FAQs</p>
-              </Link>
-              {/* <Link to="/travels">
-                <p>Travels &amp; Tours</p>
-              </Link> */}
-              {/* <Link to="/awards">
-                <p>Awards</p>
-              </Link> */}
-              <Link to="/Bus-Terminal">
-                <p>Find a Terminal</p>
-              </Link>
-              <a
-                // target="_blank"
-                rel="noreferrer"
-                href="https://blog.gigm.com/"
-              >
-                <p>Blog</p>
-              </a>
-            </div>
-            <div className="footer-card">
-              <h1>Terms</h1>
-              <Link to="/Privacy-Policy">
-                <p>Privacy Policy</p>
-              </Link>
-              <Link to="/Terms-and-Conditions">
-                <p>Terms &amp; Conditions</p>
-              </Link>
-              {/* <Link to="/safety">
-                <p>Safety</p>
-              </Link> */}
-            </div>
-            <div className="footer-card">
               <div className="socialfootericon">
-                <h1>Connect With Us</h1>
+                <h1>Follow Us</h1>
                 <div className="footer-img">
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://twitter.com/GIGMobility?s=09"
+                    href="https://x.com/suyarepublick"
                   >
                     {" "}
                     <img src={twitter} alt="" width="20" height="20" />{" "}
@@ -130,43 +61,52 @@ export const Footer = () => {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://www.facebook.com/GIGMobility"
+                    href="https://www.facebook.com/suyarepublick"
                   >
                     <img src={facebook} alt="" width="20" height="20" />{" "}
                   </a>
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://instagram.com/gigmobility?utm_medium=copy_link"
+                    href="https://www.instagram.com/suyarepublick/"
                   >
                     {" "}
                     <img src={instagram} alt="" width="20" height="20" />{" "}
                   </a>
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    background: "#56ccf24a",
-                    borderRadius: "4px",
-                    width: "170px",
-                    padding: "5px 10px",
-                    margin: "25px auto",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => history.push("/iso")}
-                >
-                  <span>Licensed by</span>
-                  <img
-                    src={isoLogo}
-                    width="20"
-                    height="20"
-                    alt=""
-                    className="ml-2"
-                  />
-                </div>
+                <br />
+                <br />
+                <br />
+                <h1>OPENING HOURS</h1>
+                <h3>TUESDAY TO SUNDAY</h3>
+                <span>5:00pm – 11:00pm</span>
+                <br />
+                <br />
+                <br />
+                <h3>VISIT US</h3>
+                <span>
+                  303 Chester road Manchester <br />
+                  M15 4EY
+                </span>
               </div>
             </div>
+            <div className="footer-card mb-5">
+              <h2>WE ARE BRINGING THE TASTE OF AFRICA TO MANCHESTER.</h2>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <span>© 2024 Suya Republick.</span>
+            </div>
+          </div>
+          <div className="pb-5 col-md-6">
+            <img
+              src={footerImg}
+              alt="footer banner"
+              loading="lazy"
+              style={{ width: "100%" }}
+            />
           </div>
         </div>
         <br />
@@ -176,7 +116,7 @@ export const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8">
-              <h6>GIG Mobility</h6>
+              <span>SUYA REPUBLICK</span>
             </div>
             <div className="col-md-2 offset-2">
               <a href="#top">
