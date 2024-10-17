@@ -18,7 +18,7 @@ export const Footer = () => {
       <footer className="last-section pb-5">
         <div className="row row-grid">
           <div className="footer-cards col-md-6">
-            <div className="footer-card mb-5">
+            <div className="footer-card mb-5 pl-5">
               {/* <div className="footer-logo-mobile">
                 <Link to="/">
                   <img src={logo} alt="gigm logo" />
@@ -32,11 +32,11 @@ export const Footer = () => {
               <br />
               <br />
               <h1 style={{ color: COLOR_GOLD }}>QUICK LINKS</h1>
-              <Link to="/About-Us/#our-team">
+              <Link to="/">
                 <p>Home</p>
               </Link>
 
-              <Link to="/luggage">
+              <Link to="/our-menu">
                 <p>Our Menu</p>
               </Link>
               <Link to="/">
