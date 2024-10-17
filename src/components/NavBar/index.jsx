@@ -97,7 +97,7 @@ export const Navbar = () => {
                 </li>
                 <li className="notify" style={{ marginLeft: "10px" }}>
                   <Link
-                    to="/suggest-route"
+                    to="/our-menu"
                     className="suggest-link drop-down-option"
                     exact={true}
                     activeClassName="active"

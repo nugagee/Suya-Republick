@@ -8,6 +8,7 @@ import NotFound from "../views/NotFoundPage/index";
 // import RegisterComponent from "../views/RegisterPage/index";
 // import { DashboardComponent } from "../views/UserProfile/Dashboard/dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import OurMenu from "../views/Our Menu/menu";
 
 const AllPages = () => (
   <Router>
@@ -19,6 +20,7 @@ const AllPages = () => (
       {/* <Route path="/Register" component={RegisterComponent} /> */}
       {/* <Route exact={true} path="/" component={HomeComponent} /> */}
       <Route exact path="/" element={<HomeComponent />} />
+      <Route exact path="/our-menu" element={<OurMenu />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Router>
