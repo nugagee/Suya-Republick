@@ -11,11 +11,15 @@ import beefSuya from "../../assets/img/suya/Beef-Suya-2.jpg";
 import lambSuya from "../../assets/img/suya/Lamb-Suya-3.jpg";
 import shawarma from "../../assets/img/suya/Shawarma.jpg";
 import Button from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 const OurMenu = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const navigate = useNavigate();
+
   return (
     <div>
       <Navbar />
@@ -64,7 +68,9 @@ const OurMenu = () => {
                         <div className="col-md-6" style={{ margin: "0 auto" }}>
                           <Button
                             text="SELECT ITEM"
-                            // handleButtonClick={handleRoundWay}
+                            handleButtonClick={() => {
+                              navigate("/product/1");
+                            }}
                             type="button"
                             btnstyle={{
                               background: "#56ccf2",
@@ -100,7 +106,9 @@ const OurMenu = () => {
                         <div className="col-md-6" style={{ margin: "0 auto" }}>
                           <Button
                             text="SELECT ITEM"
-                            // handleButtonClick={handleRoundWay}
+                            handleButtonClick={() => {
+                              navigate("/product/2");
+                            }}
                             type="button"
                             btnstyle={{
                               background: "#56ccf2",
@@ -136,7 +144,9 @@ const OurMenu = () => {
                         <div className="col-md-6" style={{ margin: "0 auto" }}>
                           <Button
                             text="SELECT ITEM"
-                            // handleButtonClick={handleRoundWay}
+                            handleButtonClick={() => {
+                              navigate("/product/3");
+                            }}
                             type="button"
                             btnstyle={{
                               background: "#56ccf2",
