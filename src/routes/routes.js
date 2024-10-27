@@ -9,6 +9,7 @@ import NotFound from "../views/NotFoundPage/index";
 // import { DashboardComponent } from "../views/UserProfile/Dashboard/dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurMenu from "../views/Our Menu/menu";
+import Product from "../views/Product/product";
 
 const AllPages = () => (
   <Router>
@@ -21,6 +22,7 @@ const AllPages = () => (
       {/* <Route exact={true} path="/" component={HomeComponent} /> */}
       <Route exact path="/" element={<HomeComponent />} />
       <Route exact path="/our-menu" element={<OurMenu />} />
+      <Route exact path="/product/:id" element={<Product />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Router>
