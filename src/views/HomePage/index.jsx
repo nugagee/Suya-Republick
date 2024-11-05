@@ -5,8 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 // import "slick-carousel/slick/slick-theme.css";
 // import "slick-carousel/slick/slick.css";
 import Swal from "sweetalert2";
-import cards from "../../assets/img/card.webp";
-import ep from "../../assets/img/man.webp";
 import spiceText from "../../assets/img/suya/Suya-Spice-Text-1.png";
 import spiceImage from "../../assets/img/suya/Suya-Spice-Banner.jpg";
 import spiceImageGif from "../../assets/img/suya/Suya-Spice-Banner-gif.gif";

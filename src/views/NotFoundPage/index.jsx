@@ -11,32 +11,9 @@ const getURL = () => {
     window.location.replace("https://gigm.com/Contact-Us");
   } else if (page === "Bus-Terminal" || page === "Terminals") {
     window.location.replace("https://gigm.com/Bus-Terminal");
-  } else if (
-    page === "Captain" ||
-    page === "Default" ||
-    page === "How-To-Book-A-Bus" ||
-    page === "Learning-Academy" ||
-    // page === "Luggage-Allowance" ||
-    page === "Learning-Academy" ||
-    page === "Schedule" ||
-    // page === "Travels-Tours" ||
-    page === "gigm-mobile-app"
-  ) {
-    window.location.replace("https://gigm.com");
     } else if (page === "About-Us.aspx") {
       window.location.replace("https://gigm.com/About-Us");
-  } else if ( page === "https://gigm.com/privacy") {
-    window.location.replace("https://gigm.com/Privacy-Policy");
-    // } else if (page === "Customer-Care") {
-    //   window.location.replace("https://gigm.com/Contact-Us");
-  } else if (page === "Pickupservice" || page === "pickupservice") {
-    window.location.replace("https://gigm.com/Pickupservice");
-  // } else if (page === "Customer-Care") {
-  //   window.location.replace("https://gigm.com/Contact-Us");
-    // } else if (page === "Terms-and-Conditions") {
-    //   window.location.replace("https://gigm.com/Terms-and-Conditions");
-    // } else if (page === "hire-vehicle") {
-    //   window.location.replace("https://gigm.com/hire-vehicle");
+  
   }
 };
 
