@@ -10,6 +10,7 @@ import NotFound from "../views/NotFoundPage/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurMenu from "../views/Our Menu/menu";
 import Product from "../views/Product/product";
+import Cart from "../views/Cart/cart";
 
 const AllPages = () => (
   <Router>
@@ -23,6 +24,7 @@ const AllPages = () => (
       <Route exact path="/" element={<HomeComponent />} />
       <Route exact path="/our-menu" element={<OurMenu />} />
       <Route exact path="/product/:id" element={<Product />} />
+      <Route exact path="/cart" element={<Cart />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Router>
