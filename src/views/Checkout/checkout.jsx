@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../components/NavBar/index";
 import Footer from "../../components/Footer/index";
 import "./checkout.css";
-import SideBar from "../../components/SideBar";
-import beefSuya from "../../assets/img/suya/Beef-Suya-2.jpg";
-import lambSuya from "../../assets/img/suya/Lamb-Suya-3.jpg";
-import shawarma from "../../assets/img/suya/Shawarma.jpg";
 import Button from "../../components/Button";
 import SelectComponent from "../../components/Dropdown";
 import {
@@ -18,7 +14,7 @@ import CreditCardInput from "react-credit-card-input";
 
 const Checkout = ({ data }) => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []);
   const [productQuantity, setProductQuantity] = useState("");
 
@@ -324,36 +320,37 @@ const Checkout = ({ data }) => {
         <label htmlFor="email" className="label-auth">
           Pay securely using your credit card.
         </label>
-        <div className="row">
+        {/* <div className="row">
           <div className="col-md-4">
             <InputField
               type="text"
               placeholder="Enter Card number"
-              // onChangeMethod={(e) => setVerificationCode(e.target.value)}
+              onChangeMethod={(e) => setVerificationCode(e.target.value)}
             />
           </div>
           <div className="col-md-4">
             <InputField
               type="text"
               placeholder="MM/YY"
-              // onChangeMethod={(e) => setVerificationCode(e.target.value)}
+              onChangeMethod={(e) => setVerificationCode(e.target.value)}
             />
           </div>
           <div className="col-md-4">
             <InputField
               type="text"
               placeholder="CVV"
-              // onChangeMethod={(e) => setVerificationCode(e.target.value)}
+              onChangeMethod={(e) => setVerificationCode(e.target.value)}
             />
           </div>
-        </div>
-        <br />
-        <br />
+        </div> */}
         <CreditCardInput
           // cardNumberInputProps={{ value: cardNumber, onChange: this.handleCardNumberChange }}
           // cardExpiryInputProps={{ value: expiry, onChange: this.handleCardExpiryChange }}
           // cardCVCInputProps={{ value: cvc, onChange: this.handleCardCVCChange }}
           fieldClassName="input"
+          containerStyle={{width: "100%"}}
+          inputStyle={{background: "transparent", width: "400px"}}
+          fieldStyle={{width: "100%", border: "1px solid black", background: "transparent", height: "60px", borderRaadius: "5px"}}
         />
 
         <hr />
