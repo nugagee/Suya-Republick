@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurMenu from "../views/Our Menu/menu";
 import Product from "../views/Product/product";
 import Cart from "../views/Cart/cart";
+import Checkout from "../views/Checkout/checkout";
 
 const AllPages = () => (
   <Router>
@@ -25,6 +26,7 @@ const AllPages = () => (
       <Route exact path="/our-menu" element={<OurMenu />} />
       <Route exact path="/product/:id" element={<Product />} />
       <Route exact path="/cart" element={<Cart />} />
+      <Route exact path="/checkout" element={<Checkout />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </Router>
