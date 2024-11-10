@@ -148,7 +148,7 @@ const Cart = ({ data }) => {
           >
             SHIPPING
           </h6>
-          <div className="col-md-9 text-center">
+          <div className="col-md-9">
             <div className="form-check">
               <input
                 type="radio"
